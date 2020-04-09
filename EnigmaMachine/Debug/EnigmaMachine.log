@@ -1,0 +1,4 @@
+﻿  enigma.c
+c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(18): warning C4101: 'j': unreferenced local variable
+c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(165): warning C4013: 'getch' undefined; assuming extern returning int
+  EnigmaMachine.vcxproj -> C:\Users\Admin\source\repos\EnigmaMachine\Debug\EnigmaMachine.exe
