@@ -1,19 +1,20 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<string.h>
-#include<glut.h>
+#include<GL/glut.h>
 #define FORWARD 1
 #define BACKWARD 2
 
-char r1[27][2], r2[27][2], r3[27][2], ref[14][2], plug[27][2];
-char map1[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
-char map2[] = "MLPOKIJNBHUYGVCFTRDXSEWQAZ";
-char map3[] = "LKJHGFDSAMPOIUNBYTVCREXZWQ";
-char plugmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char refmap[] = "NOPQRSTUVWXYZ";
+char r1[27][2], r2[27][2], r3[27][2], ref[14][2], plug[27][2]; // rotor and plug variables
+char map1[] = "QWERTYUIOPASDFGHJKLZXCVBNM"; // mapping for rotor 1
+char map2[] = "MLPOKIJNBHUYGVCFTRDXSEWQAZ"; //mapping for rotor 2
+char map3[] = "LKJHGFDSAMPOIUNBYTVCREXZWQ"; // mapping for rotor 3
+char plugmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //plugboard mapping
+char refmap[] = "NOPQRSTUVWXYZ"; // reflector mapping
 
-int index1, index2, index3;
+int index1, index2, index3; // index variables for rotors
 
+//Initialize rotors
 void init() {
 	int i, j;
 	for (i = 0; i < 27; i++) {
@@ -36,6 +37,7 @@ void init() {
 	index3 = index2 = index1 = 0;
 }
 
+//Function to find character in the array
 int findInArray(char c, char arr[], int n) {
 	int i;
 	for (i = 0; i < n; i++) {
@@ -45,6 +47,7 @@ int findInArray(char c, char arr[], int n) {
 	return -1;
 }
 
+//Function to send signal through rotors
 char passThroughRotors(char ch, int direction) {
 	int in, i;
 	char c[27];
@@ -76,6 +79,7 @@ char passThroughRotors(char ch, int direction) {
 	}
 }
 
+//Function to send signals through reflectors
 char passThroughReflectors(char ch) {
 	char c[14];
 	int i, in;
@@ -93,6 +97,7 @@ char passThroughReflectors(char ch) {
 	}
 }
 
+//Function to send signals through plugboard
 char passThroughPlugBoard(char ch, int direction) {
 	int i;
 	char c[27];
@@ -109,6 +114,7 @@ char passThroughPlugBoard(char ch, int direction) {
 
 }
 
+//Function to rotate rotors once signal has been sent
 void rotateRotors() {
 	char c0, c1;
 	int i;
@@ -144,7 +150,13 @@ void rotateRotors() {
 	}
 }
 
-void main() {
+//Graphics initialization
+void myinit() {
+	gluOrtho2D(0, 1000, 0, 1000);
+	glClearColor(0, 0, 0, 0);
+}
+
+void encrypt() {
 	char text[200];
 	init();
 	printf("Enter string to be encoded\n");
@@ -163,4 +175,32 @@ void main() {
 		rotateRotors();
 	}
 	getch();
+}
+
+void displayMenu(int n) {
+	switch (n)
+	{
+	case 1: encrypt();
+		break;
+	}
+}
+
+void display() {
+	glClearColor(0, 0, 0, 0);
+	glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void main() {
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(10, 10);
+	glutInitWindowSize(1000, 1000);
+	glutCreateWindow("Enigma");
+	myinit();
+	glutDisplayFunc(display);
+	glutCreateMenu(displayMenu);
+	glutAddMenuEntry("Simulate", 1);
+	glutAddMenuEntry("Inspect wheel", 2);
+	glutAddMenuEntry("Visualize", 3);
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+	glutMainLoop();
 }

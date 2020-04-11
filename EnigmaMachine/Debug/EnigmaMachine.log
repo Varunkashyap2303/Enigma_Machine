@@ -1,4 +1,5 @@
 ﻿  enigma.c
-c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(18): warning C4101: 'j': unreferenced local variable
-c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(165): warning C4013: 'getch' undefined; assuming extern returning int
+c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(19): warning C4101: 'j': unreferenced local variable
+c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(177): warning C4013: 'getch' undefined; assuming extern returning int
+c:\users\admin\source\repos\enigmamachine\enigmamachine\enigma.c(199): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
   EnigmaMachine.vcxproj -> C:\Users\Admin\source\repos\EnigmaMachine\Debug\EnigmaMachine.exe
