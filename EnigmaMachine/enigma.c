@@ -16,6 +16,8 @@ char map2[] = "MLPOKIJNBHUYGVCFTRDXSEWQAZ"; //mapping for rotor 2
 char map3[] = "LKJHGFDSAMPOIUNBYTVCREXZWQ"; // mapping for rotor 3
 char plugmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //plugboard mapping
 char refmap[] = "NOPQRSTUVWXYZ"; // reflector mapping
+char plainText[200]; //String variable to store plain text
+char encryptedText[200]; //String variable to store encrypted text
 
 int index1, index2, index3; // index variables for rotors
 
@@ -161,17 +163,22 @@ void myinit() {
 	glClearColor(0, 0, 0, 0);
 }
 
+void add_spaces(char *dest, int num_of_spaces) {
+	int len = strlen(dest);
+	memset(dest + len, ' ', num_of_spaces);
+	dest[len + num_of_spaces] = '\0';
+}
+
 //Function to perform string encryption
 void encrypt() {
-	char text[200];
 	init();
 	printf("Enter string to be encoded\n");
-	gets_s(text, 50);
-	int len = strlen(text);
+	gets_s(plainText, 50);
+	int len = strlen(plainText);
 	char ch;
 	char choice;
 	for (int i = 0; i < len; i++) {
-		ch = text[i];
+		ch = plainText[i];
 		ch = toupper(ch);
 		ch = passThroughPlugBoard(ch, FORWARD);
 		ch = passThroughRotors(ch, FORWARD);
@@ -180,6 +187,11 @@ void encrypt() {
 		ch = passThroughPlugBoard(ch, FORWARD);
 		printf("%c", ch);
 		rotateRotors();
+		if (ch == ' ') {
+			add_spaces(encryptedText, 1);
+		}
+		else
+			encryptedText[i] = ch;
 	}
 }
 
@@ -187,7 +199,11 @@ void encrypt() {
 void displayBoard() {
 	char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
 	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
-	char line3[8] = { 'Z','X','C','V','B','N','M',};
+	char line3[8] = { 'Z','X','C','V','B','N','M'};
+	char topLeft[] ="Plain text";
+	char topRight[] ="Cipher text";
+	char bottomLeft[] ="The plain text is:";
+	char bottomRight[] ="The cipher text is:";
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1, 1, 1);
@@ -195,7 +211,17 @@ void displayBoard() {
 	glVertex2d(width / 2, 0);
 	glVertex2d(width / 2, height);
 	glEnd();
-	//glColor3f(0, 0, 0);
+
+	glRasterPos2d(150, 600);
+	for (int i = 0; i < strlen(topLeft); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, topLeft[i]);
+	}
+
+	glRasterPos2d(825, 600);
+	for (int i = 0; i < strlen(topRight); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, topRight[i]);
+	}
+
 	for (int i = 0; i < 10; i++) {
 		glBegin(GL_LINE_LOOP);
 		glVertex2d(50 + 60 * i, 500);
@@ -269,6 +295,21 @@ void displayBoard() {
 		glRasterPos2d(95 + 60 * i + 675, 350);
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line3[i]);
 	}
+
+	glRasterPos2d(150, 250);
+	for(int i = 0; i < strlen(bottomLeft); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, bottomLeft[i]);
+	glRasterPos2d(825, 250);
+	for (int i = 0; i < strlen(bottomRight); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, bottomRight[i]);
+	glRasterPos2d(150, 150);
+	for (int i = 0; i < strlen(plainText); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, plainText[i]);
+	}
+	glRasterPos2d(825, 150);
+	for (int i = 0; i < strlen(encryptedText); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, encryptedText[i]);
+	}
 	
 	glFlush();
 }
@@ -277,8 +318,8 @@ void displayBoard() {
 void displayMenu(int n) {
 	switch (n)
 	{
-	case 1:	displayBoard();
-		encrypt();
+	case 1:	encrypt();
+		displayBoard();
 		break;
 	}
 }
@@ -301,8 +342,6 @@ void display() {
 	}
 	glFlush();
 }
-
-
 
 //main function
 void main() {
