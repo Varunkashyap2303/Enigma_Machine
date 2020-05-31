@@ -212,8 +212,20 @@ void displayBoard() {
 	char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
 	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
 	char line3[8] = { 'Z','X','C','V','B','N','M',};
+	char k[]={'K','E','Y','B','O','A','R','D'};
+	char l[]={'L','A','M','P',' ','B','O','A','R','D'};
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
+	
+	 glColor3f(.7, .3,.2);
+	glRasterPos2d(260,600);
+	for(int i=0;i<8;i++)
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,k[i]);
+
+	glRasterPos2d(900,600);
+	for(int i=0;i<10;i++)
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,l[i]);
+
 	glColor3f(1, 1, 1);
 	glBegin(GL_LINES);
 	glVertex2d(width / 2, 0);
@@ -296,6 +308,12 @@ void displayBoard() {
 
 	glFlush();
 
+}
+//Delay function
+void delay()
+{
+    for(long k=0;k<65000;k++)
+        for(long z=0;z<8000;z++);
 }
 
 //Function to display plugboard and rotors
@@ -941,6 +959,7 @@ void displayMenu(int n) {
               break;
     case 3:plugBoard();
             movement();
+	    delay();
             encryption_process();
             break;
     case 4:exit(0);
