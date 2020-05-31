@@ -197,11 +197,11 @@ void encrypt() {
 
 	}
 	/*for(int i=0,j=0;i<l;i++){
-        printf("\n%c \t",pc1[i][j]);
-        printf("%c \t",rc1[i][j]);
-        printf("%c \t",rf[i][j]);
-        printf("%c \t",rc2[i][j]);
-        printf("%c \n",pc2[i][j]);
+		printf("\n%c \t",pc1[i][j]);
+		printf("%c \t",rc1[i][j]);
+		printf("%c \t",rf[i][j]);
+		printf("%c \t",rc2[i][j]);
+		printf("%c \n",pc2[i][j]);
 	}*/
 
 }
@@ -364,148 +364,148 @@ void plugBoard() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line3[i]);
 	}
 
-    glColor3f(.5,.5,.5);
+	glColor3f(.5,.5,.5);
 	 glBegin(GL_QUAD_STRIP);
 
-        for(int i =0;i<=24;i++){
+		for(int i =0;i<=24;i++){
 
-            angle=3.14/12*i;
-            glVertex2d(50*cos(angle)+800,50*sin(angle)+400);
-            glVertex2d(55*cos(angle)+800,55*sin(angle)+400);
-        }
-    glEnd();
-
-
-
-    glBegin(GL_QUAD_STRIP);
-
-        for(int i =0;i<=24;i++){
-
-            angle=3.14/12*i;
-            glVertex2d(50*cos(angle)+1000,50*sin(angle)+400);
-            glVertex2d(55*cos(angle)+1000,55*sin(angle)+400);
-        }
-    glEnd();
+			angle=3.14/12*i;
+			glVertex2d(50*cos(angle)+800,50*sin(angle)+400);
+			glVertex2d(55*cos(angle)+800,55*sin(angle)+400);
+		}
+	glEnd();
 
 
-    glBegin(GL_QUAD_STRIP);
 
-        for(int i =0;i<=24;i++){
+	glBegin(GL_QUAD_STRIP);
 
-            angle=3.14/12*i;
-            glVertex2d(50*cos(angle)+1200,50*sin(angle)+400);
-            glVertex2d(55*cos(angle)+1200,55*sin(angle)+400);
-        }
-    glEnd();
-    glRasterPos2d(cos(angle)+790,sin(angle)+395);
-    glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'1');
+		for(int i =0;i<=24;i++){
 
-    glRasterPos2d(cos(angle)+990,sin(angle)+395);
-    glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'2');
+			angle=3.14/12*i;
+			glVertex2d(50*cos(angle)+1000,50*sin(angle)+400);
+			glVertex2d(55*cos(angle)+1000,55*sin(angle)+400);
+		}
+	glEnd();
 
-    glRasterPos2d(cos(angle)+1190,sin(angle)+395);
-    glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'3');
-    glFlush();
+
+	glBegin(GL_QUAD_STRIP);
+
+		for(int i =0;i<=24;i++){
+
+			angle=3.14/12*i;
+			glVertex2d(50*cos(angle)+1200,50*sin(angle)+400);
+			glVertex2d(55*cos(angle)+1200,55*sin(angle)+400);
+		}
+	glEnd();
+	glRasterPos2d(cos(angle)+790,sin(angle)+395);
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'1');
+
+	glRasterPos2d(cos(angle)+990,sin(angle)+395);
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'2');
+
+	glRasterPos2d(cos(angle)+1190,sin(angle)+395);
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'3');
+	glFlush();
 
 }
 void movement()
 {
-    glColor3f(.5,1,.5);
-    glEnable(GL_LINE_STIPPLE);
-    glLineWidth(3);
-    glLineStipple(1,0x0F0F);
-    glBegin(GL_LINES);
-        glVertex2d(550,370);
-        glVertex2d(720,370);
+	glColor3f(.5,1,.5);
+	glEnable(GL_LINE_STIPPLE);
+	glLineWidth(3);
+	glLineStipple(1,0x0F0F);
+	glBegin(GL_LINES);
+		glVertex2d(550,370);
+		glVertex2d(720,370);
 
-        glVertex2d(870,390);
-        glVertex2d(930,390);
+		glVertex2d(870,390);
+		glVertex2d(930,390);
 
-         glVertex2d(1070,390);
-        glVertex2d(1130,390);
+		 glVertex2d(1070,390);
+		glVertex2d(1130,390);
 
-        glVertex2d(1200,350);
-        glVertex2d(1200,280);
-        glVertex2d(1200,280);
-        glVertex2d(400,280);
-        glVertex2d(400,280);
-         glVertex2d(400,320);
+		glVertex2d(1200,350);
+		glVertex2d(1200,280);
+		glVertex2d(1200,280);
+		glVertex2d(400,280);
+		glVertex2d(400,280);
+		 glVertex2d(400,320);
 
-         glVertex2d(350,320);
-         glVertex2d(350,200);
-
-
+		 glVertex2d(350,320);
+		 glVertex2d(350,200);
 
 
-    glEnd();
 
-    glDisable(GL_LINE_STIPPLE);
 
-    glBegin(GL_LINES);
-        glVertex2d(710,360);
-        glVertex2d(720,370);
-        glVertex2d(720,370);
-        glVertex2d(710,380);
+	glEnd();
 
-        glVertex2d(920,380);
-        glVertex2d(930,390);
-        glVertex2d(930,390);
-        glVertex2d(920,400);
+	glDisable(GL_LINE_STIPPLE);
 
-         glVertex2d(1120,380);
-         glVertex2d(1130,390);
-          glVertex2d(1130,390);
-           glVertex2d(1120,400);
+	glBegin(GL_LINES);
+		glVertex2d(710,360);
+		glVertex2d(720,370);
+		glVertex2d(720,370);
+		glVertex2d(710,380);
 
-           glVertex2d(390,310);
-           glVertex2d(400,320);
-           glVertex2d(400,320);
-           glVertex2d(410,310);
+		glVertex2d(920,380);
+		glVertex2d(930,390);
+		glVertex2d(930,390);
+		glVertex2d(920,400);
 
-           glVertex2d(340,210);
-           glVertex2d(350,200);
-           glVertex2d(350,200);
-           glVertex2d(360,210);
+		 glVertex2d(1120,380);
+		 glVertex2d(1130,390);
+		  glVertex2d(1130,390);
+		   glVertex2d(1120,400);
 
-    glEnd();
-    glFlush();
+		   glVertex2d(390,310);
+		   glVertex2d(400,320);
+		   glVertex2d(400,320);
+		   glVertex2d(410,310);
+
+		   glVertex2d(340,210);
+		   glVertex2d(350,200);
+		   glVertex2d(350,200);
+		   glVertex2d(360,210);
+
+	glEnd();
+	glFlush();
 }
 
 void encryption_process()
 {
-     glColor3f(.5,.7,1);
-    glRasterPos2d(620,400);
-    for(int i=0,j=0;i<l;i++){
+	 glColor3f(.5,.7,1);
+	glRasterPos2d(620,400);
+	for(int i=0,j=0;i<l;i++){
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, pc1[i][j]);
-    }
+	}
 
-    glRasterPos2d(880,420);
-    for(int i=0,j=0;i<l;i++){
+	glRasterPos2d(880,420);
+	for(int i=0,j=0;i<l;i++){
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, rc1[i][j]);
-    }
+	}
 
-    glRasterPos2d(1080,420);
-    for(int i=0,j=0;i<l;i++){
+	glRasterPos2d(1080,420);
+	for(int i=0,j=0;i<l;i++){
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, rf[i][j]);
-    }
+	}
 
-     glRasterPos2d(850,300);
-    for(int i=0,j=0;i<l;i++){
+	 glRasterPos2d(850,300);
+	for(int i=0,j=0;i<l;i++){
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, rc2[i][j]);
-    }
+	}
 
-     glRasterPos2d(350,150);
-    for(int i=0,j=0;i<l;i++){
+	 glRasterPos2d(350,150);
+	for(int i=0,j=0;i<l;i++){
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, pc2[i][j]);
-    }
+	}
 
 
-    glFlush();
+	glFlush();
 }
 
 
@@ -533,10 +533,10 @@ void display() {
 
 
   Input:  inner_radius - radius of hole at center
-          outer_radius - radius at center of teeth
-          width - width of gear
-          teeth - number of teeth
-          tooth_depth - depth of tooth
+		  outer_radius - radius at center of teeth
+		  width - width of gear
+		  teeth - number of teeth
+		  tooth_depth - depth of tooth
 
  **/
 char str[28]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
@@ -561,11 +561,11 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   /* draw front face */
   glBegin(GL_QUAD_STRIP);
   for (i = 0; i <= teeth; i++) {
-    angle = i * 2.0 * M_PI / teeth;
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
+	angle = i * 2.0 * M_PI / teeth;
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
   }
   glEnd();
 
@@ -573,12 +573,12 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   glBegin(GL_QUADS);
   da = 2.0 * M_PI / teeth / 4.0;
   for (i = 0; i < teeth; i++) {
-    angle = i * 2.0 * M_PI / teeth;
+	angle = i * 2.0 * M_PI / teeth;
 
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
-    glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), wid * 0.5);
-    glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), wid * 0.5);
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
+	glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), wid * 0.5);
+	glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), wid * 0.5);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
   }
   glEnd();
 
@@ -587,11 +587,11 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   /* draw back face */
   glBegin(GL_QUAD_STRIP);
   for (i = 0; i <= teeth; i++) {
-    angle = i * 2.0 * M_PI / teeth;
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
+	angle = i * 2.0 * M_PI / teeth;
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
   }
   glEnd();
 
@@ -599,42 +599,42 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   glBegin(GL_QUADS);
   da = 2.0 * M_PI / teeth / 4.0;
   for (i = 0; i < teeth; i++) {
-    angle = i * 2.0 * M_PI / teeth;
+	angle = i * 2.0 * M_PI / teeth;
 
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
-    glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), -wid * 0.5);
-    glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), -wid * 0.5);
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
+	glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), -wid * 0.5);
+	glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), -wid * 0.5);
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
   }
   glEnd();
 
   /* draw outward faces of teeth */
   glBegin(GL_QUAD_STRIP);
   for (i = 0; i < teeth; i++) {
-    angle = i * 2.0 * M_PI / teeth;
+	angle = i * 2.0 * M_PI / teeth;
 
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
-    glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
-    u = r2 * cos(angle + da) - r1 * cos(angle);
-    v = r2 * sin(angle + da) - r1 * sin(angle);
-    len = sqrt(u * u + v * v);
-    u /= len;
-    v /= len;
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), wid * 0.5);
+	glVertex3f(r1 * cos(angle), r1 * sin(angle), -wid * 0.5);
+	u = r2 * cos(angle + da) - r1 * cos(angle);
+	v = r2 * sin(angle + da) - r1 * sin(angle);
+	len = sqrt(u * u + v * v);
+	u /= len;
+	v /= len;
 
 
-    glNormal3f(v, -u, 0.0);
-    glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), wid * 0.5);
-    glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), -wid * 0.5);
-    glNormal3f(cos(angle), sin(angle), 0.0);
-    glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), wid * 0.5);
-    glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), -wid * 0.5);
-    u = r1 * cos(angle + 3 * da) - r2 * cos(angle + 2 * da);
-    v = r1 * sin(angle + 3 * da) - r2 * sin(angle + 2 * da);
-    glNormal3f(v, -u, 0.0);
+	glNormal3f(v, -u, 0.0);
+	glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), wid * 0.5);
+	glVertex3f(r2 * cos(angle + da), r2 * sin(angle + da), -wid * 0.5);
+	glNormal3f(cos(angle), sin(angle), 0.0);
+	glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), wid * 0.5);
+	glVertex3f(r2 * cos(angle + 2 * da), r2 * sin(angle + 2 * da), -wid * 0.5);
+	u = r1 * cos(angle + 3 * da) - r2 * cos(angle + 2 * da);
+	v = r1 * sin(angle + 3 * da) - r2 * sin(angle + 2 * da);
+	glNormal3f(v, -u, 0.0);
 
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
-    glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
-    glNormal3f(cos(angle), sin(angle), 0.0);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), wid * 0.5);
+	glVertex3f(r1 * cos(angle + 3 * da), r1 * sin(angle + 3 * da), -wid * 0.5);
+	glNormal3f(cos(angle), sin(angle), 0.0);
   }
 
   glVertex3f(r1 * cos(0), r1 * sin(0), wid * 0.5);
@@ -647,11 +647,11 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   /* draw inside radius cylinder */
   glBegin(GL_QUAD_STRIP);
 
-    angle = i * 2.0 * M_PI / teeth;
+	angle = i * 2.0 * M_PI / teeth;
 
-    glNormal3f(-cos(angle), -sin(angle), 0.0);
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
-    glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
+	glNormal3f(-cos(angle), -sin(angle), 0.0);
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), -wid * 0.5);
+	glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
 
   glEnd();
 }
@@ -696,9 +696,9 @@ static void draw()
 //last one
    glPushMatrix();
   glTranslatef(6.4, 3.9, 8.8);
-    glRotatef(angle, 0.0, 0.0, 1.0);
-    glCallList(gear4);
-    glPopMatrix();
+	glRotatef(angle, 0.0, 0.0, 1.0);
+	glCallList(gear4);
+	glPopMatrix();
 
 //first one
    glPushMatrix();
@@ -733,7 +733,7 @@ glPopMatrix();
   glutSwapBuffers();
 
   if (count == limit) {
-    exit(0);
+	exit(0);
   }
 }
 
@@ -749,18 +749,18 @@ key(unsigned char k, int x, int y)
 {
   switch (k) {
   case 'z':
-    view_rotz += 2.0;
-    break;
+	view_rotz += 2.0;
+	break;
   case 'Z':
-    view_rotz -= 2.0;
-    break;
+	view_rotz -= 2.0;
+	break;
 
 
   case 27:  /* Escape */
-    exit(0);
-    break;
+	exit(0);
+	break;
   default:
-    return;
+	return;
   }
   glutPostRedisplay();
 }
@@ -772,20 +772,20 @@ special(int k, int x, int y)
 {
   switch (k) {
   case GLUT_KEY_UP:
-    view_rotx += 2.0;
-    break;
+	view_rotx += 2.0;
+	break;
   case GLUT_KEY_DOWN:
-    view_rotx -= 2.0;
-    break;
+	view_rotx -= 2.0;
+	break;
   case GLUT_KEY_LEFT:
-    view_roty += 2.0;
-    break;
+	view_roty += 2.0;
+	break;
   case GLUT_KEY_RIGHT:
-    view_roty -= 2.0;
-    break;
+	view_roty -= 2.0;
+	break;
 
   default:
-    return;
+	return;
   }
   glutPostRedisplay();
 }
@@ -883,18 +883,18 @@ static void minit(void)
 void visible(int vis)
 {
   if (vis == GLUT_VISIBLE)
-    glutIdleFunc(idle);
+	glutIdleFunc(idle);
 
   else
-    glutIdleFunc(NULL);
+	glutIdleFunc(NULL);
 }
 int f;
 void mpt(int b,int a,int x,int y)
 {
-    if(b==GLUT_RIGHT_BUTTON && a==GLUT_DOWN){
-        glutHideWindow();
+	if(b==GLUT_RIGHT_BUTTON && a==GLUT_DOWN){
+		glutHideWindow();
 
-    }
+	}
 }
 
 
@@ -908,27 +908,27 @@ void displayMenu(int n) {
 		encrypt();
 		break;
 
-    case 2:
-            glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
+	case 2:
+			glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
 
 
-           f= glutCreateSubWindow(m,0,0,width,height);
-            minit();
+		   f= glutCreateSubWindow(m,0,0,width,height);
+			minit();
 
-              glutDisplayFunc(draw);
-              glutReshapeFunc(reshape);
-                glutMouseFunc(mpt);
-              glutKeyboardFunc(key);
-              glutSpecialFunc(special);
-              glutVisibilityFunc(visible);
+			  glutDisplayFunc(draw);
+			  glutReshapeFunc(reshape);
+				glutMouseFunc(mpt);
+			  glutKeyboardFunc(key);
+			  glutSpecialFunc(special);
+			  glutVisibilityFunc(visible);
 
-              break;
-    case 3:plugBoard();
-            movement();
-            encryption_process();
-            break;
-    case 4:exit(0);
-            break;
+			  break;
+	case 3:plugBoard();
+			movement();
+			encryption_process();
+			break;
+	case 4:exit(0);
+			break;
 
 
 
@@ -939,13 +939,13 @@ void displayMenu(int n) {
 
 //main function
 void main(int argc,char* argv[]) {
-    glutInit(&argc,argv);
+	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
 	m=glutCreateWindow("Enigma");
 	myinit();
-    glutDisplayFunc(display);
+	glutDisplayFunc(display);
 	glutCreateMenu(displayMenu);
 	glutAddMenuEntry("Simulate", 1);
 	glutAddMenuEntry("Inspect wheel", 2);

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="enigma.c">
+    <ClCompile Include="project.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
