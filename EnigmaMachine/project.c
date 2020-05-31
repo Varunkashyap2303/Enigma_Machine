@@ -212,6 +212,8 @@ void displayBoard() {
 	char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
 	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
 	char line3[8] = { 'Z','X','C','V','B','N','M',};
+	char leftHeading[] = "KEYBOARD";
+	char rightHeading[] = "LAMP BOARD";
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1, 1, 1);
@@ -519,13 +521,32 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	char line1[] = "Welcome to the Enigma machine simlator";
 	char line2[] = "Press Right mouse button for functionalities";
+	char names[] = "Project by: Rakshith D and Varun Kashyap";
+	char usn[] = "USN: 1RN17CS073, 1RN17CS071";
+	char title[] = "Computer graphics and visualization project";
+
+	glRasterPos2d(50, 100);
+	for (int i = 0; i < strlen(names); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, names[i]);
+	}
+
+	glRasterPos2d(900, 100);
+	for (int i = 0; i < strlen(usn); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, usn[i]);
+	}
+
+	glRasterPos2d(430, 600);
+	for (int i = 0; i < strlen(title); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, title[i]);
+	}
+
 	glColor3f(1, 1, 0);
 	glRasterPos2d(450, 500);
 	for (int i = 0; i < strlen(line1); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line1[i]);
 	}
 	glColor3f(0, 1, 1);
-	glRasterPos2d(420, 200);
+	glRasterPos2d(420, 300);
 	for (int i = 0; i < strlen(line2); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line2[i]);
 	}
