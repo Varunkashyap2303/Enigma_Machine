@@ -23,8 +23,8 @@ char refmap[] = "NOPQRSTUVWXYZ"; // reflector mapping
 
 int index1, index2, index3; // index variables for rotors
 
-char pc1[50][50],pc2[50][50],rc1[50][50],rc2[50][50],rf[50][50];
-int l;
+char pc1[50][50],pc2[50][50],rc1[50][50],rc2[50][50],rf[50][50];// 2D arrays to store encrypted texts at each functions
+int l;//to store the length of string
 
 //Initialize rotors
 void init() {
@@ -298,6 +298,7 @@ void displayBoard() {
 
 }
 
+//Function to display plugboard and rotors
 void plugBoard() {
 	char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
 	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
@@ -408,6 +409,8 @@ void plugBoard() {
 	glFlush();
 
 }
+
+//Function to display arrows in visluaisation
 void movement()
 {
 	glColor3f(.5,1,.5);
@@ -471,6 +474,7 @@ void movement()
 	glFlush();
 }
 
+//Function to print encrypted texts at each function
 void encryption_process()
 {
 	 glColor3f(.5,.7,1);
@@ -539,7 +543,8 @@ void display() {
 		  tooth_depth - depth of tooth
 
  **/
-char str[28]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
+//Function to design the wheels
 static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   GLint teeth, GLfloat tooth_depth)
 {
@@ -656,13 +661,14 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
   glEnd();
 }
 
-static GLfloat view_rotx = 20.0, view_roty = -50.0, view_rotz = 0.0;
-static GLint gear1, gear2, gear3,gear4,gear5,gear6,gear7,gear8;
-static GLfloat angle = 0.0;
+static GLfloat view_rotx = 20.0, view_roty = -50.0, view_rotz = 0.0;//inital position of angles
+static GLint gear1, gear2, gear3,gear4,gear5,gear6,gear7,gear8;// wheels 
+static GLfloat angle = 0.0;// angle for rotation
 
-static GLuint limit;
-static GLuint count = 1;
+static GLuint limit;// used in rotation
+static GLuint count = 1;//number of rotations
 
+//Function to  position the each wheels
 static void draw()
 {
 
@@ -737,6 +743,7 @@ glPopMatrix();
   }
 }
 
+// funtion to spin the angle
 static void idle()
 {
 
@@ -744,6 +751,7 @@ static void idle()
 
   glutPostRedisplay();
 }
+//function to move the wheels
 static void
 key(unsigned char k, int x, int y)
 {
@@ -764,9 +772,11 @@ key(unsigned char k, int x, int y)
   }
   glutPostRedisplay();
 }
-int m;
-/* change view angle */
-/* ARGSUSED1 */
+
+int m;// to store the parent window ID
+
+// Function to  change view angle of wheels
+
 static void
 special(int k, int x, int y)
 {
@@ -789,6 +799,7 @@ special(int k, int x, int y)
   }
   glutPostRedisplay();
 }
+
 /* new window size or exposure */
 static void reshape(int w, int he)
 {
@@ -804,10 +815,11 @@ static void reshape(int w, int he)
 
 }
 
+//Function to create the wheels
 static void minit(void)
 {
 
-
+	// colors of wheels
   static GLfloat pos[4] =
   {5.0, 5.0, 10.0, 0.0};
   static GLfloat color[4] =
@@ -827,7 +839,7 @@ static void minit(void)
   gluOrtho2D(0,500,0,500);
 
 
-  /* make the gears */
+  /* make the wheels */
   gear1 = glGenLists(1);
   glNewList(gear1, GL_COMPILE);
   glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
@@ -880,6 +892,7 @@ static void minit(void)
   glEnable(GL_NORMALIZE);
 }
 
+//Fnction to spin the wheels
 void visible(int vis)
 {
   if (vis == GLUT_VISIBLE)
@@ -888,7 +901,10 @@ void visible(int vis)
   else
 	glutIdleFunc(NULL);
 }
-int f;
+
+int f;//used to store the value of subwindow id
+
+//Mouse event function to come back from sud window
 void mpt(int b,int a,int x,int y)
 {
 	if(b==GLUT_RIGHT_BUTTON && a==GLUT_DOWN){
