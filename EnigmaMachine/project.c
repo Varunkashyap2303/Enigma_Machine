@@ -171,7 +171,9 @@ void myinit() {
 
 //Function to perform string encryption
 void encrypt() {
-	
+    char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
+	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
+	char line3[8] = { 'Z','X','C','V','B','N','M',};
 	init();
 	printf("Enter string to be encoded\n");
 	gets(text);
@@ -215,6 +217,7 @@ void encrypt() {
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, pc2[i][j]);
 	}
+
 	glFlush();
 
 }
@@ -231,7 +234,7 @@ void displayBoard() {
 	char rightline[] = "The cipher text is:";
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	
+
 	 glColor3f(.7, .3,.2);
 	glRasterPos2d(260,600);
 	for(int i=0;i<8;i++)
@@ -274,7 +277,7 @@ void displayBoard() {
 	for (int i = 0; i < 7; i++) {
 		glBegin(GL_LINE_LOOP);
 		glVertex2d(85 + 60 * i, 380);
-		glVertex2d(125 + 60 * i, 380);
+		glVertex2d(125 +  60 * i, 380);
 		glVertex2d(125 + 60 * i, 340);
 		glVertex2d(85 + 60 * i, 340);
 		glEnd();
@@ -323,17 +326,17 @@ void displayBoard() {
 
 	glRasterPos2d(50, 100);
 	for (int i = 0; i < strlen(leftline); i++) {
-		
+
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, leftline[i]);
 	}
 
 	glRasterPos2d(800, 100);
 	for (int i = 0; i < strlen(rightline); i++) {
-		
+
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, rightline[i]);
 	}
-	
-	
+
+
 
 	glFlush();
 
@@ -564,26 +567,56 @@ void encryption_process()
 void display() {
 	glClearColor(0,0,0,0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	char line1[] = "Welcome to the Enigma machine simlator";
+	char line1[] = "Welcome to the Enigma machine simulator";
 	char line2[] = "Press Right mouse button for functionalities";
-	char names[] = "Project by: Rakshith D, Varun Kashyap";
-	char usn[] = "USN: 1RN17CS073, 1RN17CS071";
-	char title[] = "Computer graphics and visualization project";
-
-	glRasterPos2d(450, 600);
+	char name_1[] = "VARUN R KASHYAP : 1RN17CS071";
+	char name_2[]="RAKSHITH D : 1RN17CS073";
+	char title[] = "COMPUTER GRAPHICS AND VISUALIZATION MINI PROJECT";
+	char clg[]="RNS INSTITUTE OF TECHNOLOGY";
+	char dept[]="DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING";
+	char pre[]="PRESENTED BY :";
+	char t_name[]="Dr. SUDHAMANI M J";
+	char g[]="UNDER GUIDANCE OF :";
+    glColor3f(.1,.5,.6);
+	glRasterPos2d(320, 500);
 	for (int i = 0; i < strlen(title); i++) {
+
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, title[i]);
 	}
-
-	glRasterPos2d(50, 100);
-	for (int i = 0; i < strlen(names); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, names[i]);
+    glColor3f(0,0,1);
+	glRasterPos2d(480, 600);
+	for (int i = 0; i < strlen(clg); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, clg[i]);
+	}
+    glColor3f(1,0.3,.3);
+	glRasterPos2d(50, 200);
+	for (int i = 0; i < strlen(pre); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, pre[i]);
 	}
 
-	glRasterPos2d(850, 100);
-	for (int i = 0; i < strlen(usn); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, usn[i]);
+	glColor3f(.7,0.7,.7);
+	glRasterPos2d(100, 150);
+	for (int i = 0; i < strlen(name_1); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, name_1[i]);
 	}
+
+	glColor3f(.7,0.7,.7);
+	glRasterPos2d(100, 100);
+	for (int i = 0; i < strlen(name_2); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, name_2[i]);
+	}
+
+	 glColor3f(1,0.3,.3);
+	glRasterPos2d(850, 200);
+	for (int i = 0; i < strlen(g); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, g[i]);
+	}
+	glColor3f(.7,0.7,.7);
+	glRasterPos2d(900, 150);
+	for (int i = 0; i < strlen(t_name); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, t_name[i]);
+	}
+
 
 	glColor3f(1, 1, 0);
 	glRasterPos2d(450, 400);
@@ -591,7 +624,7 @@ void display() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line1[i]);
 	}
 	glColor3f(0, 1, 1);
-	glRasterPos2d(450, 200);
+	glRasterPos2d(450, 280);
 	for (int i = 0; i < strlen(line2); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line2[i]);
 	}
@@ -728,7 +761,7 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
 }
 
 static GLfloat view_rotx = 20.0, view_roty = -50.0, view_rotz = 0.0;//inital position of angles
-static GLint gear1, gear2, gear3,gear4,gear5,gear6,gear7,gear8;// wheels 
+static GLint gear1, gear2, gear3,gear4,gear5,gear6,gear7,gear8;// wheels
 static GLfloat angle = 0.0;// angle for rotation
 
 static GLuint limit;// used in rotation
