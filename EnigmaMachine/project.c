@@ -2,7 +2,11 @@
 #include<ctype.h>
 #include<string.h>
 #include<math.h>
+#include<Windows.h>
+#include<Mmsystem.h>
+#include<mciapi.h>
 #include<GL/glut.h>
+#pragma comment(lib, "Winmm.lib")
 #define FORWARD 1
 #define BACKWARD 2
 #define width 1350
@@ -596,6 +600,7 @@ void display() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line2[i]);
 	}
 	glFlush();
+	//PlaySound("C:\\Users\\Admin\\Music\\test.WAV", NULL, SND_SYNC | SND_LOOP | SND_FILENAME);
 }
 
 
@@ -1032,13 +1037,10 @@ void main(int argc,char* argv[]) {
 	glutCreateMenu(displayMenu);
 	glutAddMenuEntry("Simulate", 1);
 	glutAddMenuEntry("Inspect wheel", 2);
-
-
-
-
 	glutAddMenuEntry("Visualize", 3);
 	glutAddMenuEntry("Exit",4);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
+	
 	glutMainLoop();
 }
 
