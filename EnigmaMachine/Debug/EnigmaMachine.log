@@ -1,16 +1,20 @@
 ﻿  project.c
 c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(36): warning C4101: 'j': unreferenced local variable
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(181): warning C4013: 'gets' undefined; assuming extern returning int
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(212): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(184): warning C4101: 'choice': unreferenced local variable
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(329): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(335): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(578): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(583): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(183): warning C4013: 'gets' undefined; assuming extern returning int
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(214): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(186): warning C4101: 'choice': unreferenced local variable
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(332): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(338): warning C4018: '<': signed/unsigned mismatch
 c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(588): warning C4018: '<': signed/unsigned mismatch
 c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(594): warning C4018: '<': signed/unsigned mismatch
 c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(599): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(970): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(1005): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
-c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(1036): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(605): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(611): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(617): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(622): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(629): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(634): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(1006): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(1041): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
+c:\users\admin\source\repos\enigma_machine\enigmamachine\project.c(1072): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void)'
   EnigmaMachine.vcxproj -> C:\Users\Admin\source\repos\Enigma_Machine\Debug\EnigmaMachine.exe

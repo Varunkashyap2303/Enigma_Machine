@@ -175,7 +175,7 @@ void myinit() {
 
 //Function to perform string encryption
 void encrypt() {
-    char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
+	char line1[11] = { 'Q','W','E','R','T','Y','U','I','O','P' };
 	char line2[10] = { 'A','S','D','F','G','H','J','K','L'};
 	char line3[8] = { 'Z','X','C','V','B','N','M',};
 	init();
@@ -343,7 +343,8 @@ void displayBoard() {
 
 
 	glFlush();
-
+	PlaySound("C:\\Users\\Admin\\source\\repos\\Enigma_Machine\\EnigmaMachine\\Audio\\simulate.WAV", NULL, SND_SYNC);
+	
 }
 //Delay function
 void delay()
@@ -564,6 +565,7 @@ void encryption_process()
 
 
 	glFlush();
+	PlaySound("C:\\Users\\Admin\\source\\repos\\Enigma_Machine\\EnigmaMachine\\Audio\\visualize.WAV", NULL, SND_SYNC);
 }
 
 
@@ -581,18 +583,18 @@ void display() {
 	char pre[]="PRESENTED BY :";
 	char t_name[]="Dr. SUDHAMANI M J";
 	char g[]="UNDER GUIDANCE OF :";
-    glColor3f(.1,.5,.6);
+	glColor3f(.1,.5,.6);
 	glRasterPos2d(320, 500);
 	for (int i = 0; i < strlen(title); i++) {
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, title[i]);
 	}
-    glColor3f(0,0,1);
+	glColor3f(0,0,1);
 	glRasterPos2d(480, 600);
 	for (int i = 0; i < strlen(clg); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, clg[i]);
 	}
-    glColor3f(1,0.3,.3);
+	glColor3f(1,0.3,.3);
 	glRasterPos2d(50, 200);
 	for (int i = 0; i < strlen(pre); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, pre[i]);
@@ -633,7 +635,7 @@ void display() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, line2[i]);
 	}
 	glFlush();
-	//PlaySound("C:\\Users\\Admin\\Music\\test.WAV", NULL, SND_SYNC | SND_LOOP | SND_FILENAME);
+	PlaySound("C:\\Users\\Admin\\source\\repos\\Enigma_Machine\\EnigmaMachine\\Audio\\opening.WAV", NULL, SND_SYNC);
 }
 
 
@@ -763,6 +765,7 @@ static void gear(GLfloat inner_radius, GLfloat outer_radius, GLfloat wid,
 	glVertex3f(r0 * cos(angle), r0 * sin(angle), wid * 0.5);
 
   glEnd();
+  PlaySound("C:\\Users\\Admin\\source\\repos\\Enigma_Machine\\EnigmaMachine\\Audio\\wheel.WAV", NULL, SND_SYNC);
 }
 
 static GLfloat view_rotx = 20.0, view_roty = -50.0, view_rotz = 0.0;//inital position of angles
@@ -1041,11 +1044,11 @@ void displayMenu(int n) {
 			  glutKeyboardFunc(key);
 			  glutSpecialFunc(special);
 			  glutVisibilityFunc(visible);
-
+			  
 			  break;
 	case 3:plugBoard();
 			movement();
-		delay();
+			delay();
 			encryption_process();
 			break;
 	case 4:exit(0);
